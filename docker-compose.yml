@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  gpt-llama:
+    # Build the Docker image using the Dockerfile in the current directory
+    build: .
+    # Set the image name and tag
+    image: gpt-llamacpp:latest
+    # Map port 8000 on the host to port 443 in the container
+    ports:
+      - '8000:443'
+    # Mount the volume for the llama.cpp directory
+    # Note: Update the paths to match your local setup
+    # Todo: Make sure the paths are consistent with the test-installation script
+    # Todo: Test with other integrations before merging to the main branch
+    volumes:
+      - /Users/devmentat/Documents/AI/llama.cpp:/Users/devmentat/Documents/AI/llama.cpp

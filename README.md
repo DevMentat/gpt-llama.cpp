@@ -165,6 +165,36 @@ That's it!
    npm start
    ```
 
+## Docker
+
+You can run the `gpt-llama.cpp` application using Docker. This provides an isolated environment and simplifies the setup process.
+
+### Prerequisites
+
+1. Install [Docker](https://docs.docker.com/get-docker/) on your system.
+
+### Building the Docker Image
+
+1. Navigate to the root directory of the `gpt-llama.cpp` application in your terminal.
+
+2. Build the Docker image by running: `docker build -t gpt-llamacpp:latest .`
+
+This command builds the Docker image using the `Dockerfile` in the current directory and tags it as `gpt-llamacpp:latest`.
+
+### Running the Docker Container
+
+1. Run a Docker container from the built image: `docker run -p 8000:443 -v /path/to/llama.cpp:/path/to/llama.cpp gpt-llamacpp:latest`
+
+Replace `/path/to/llama.cpp` with the correct path to your `llama.cpp` directory on your local machine. This command maps port 8000 on the host to port 443 in the container and mounts a volume for the `llama.cpp` directory.
+Your `gpt-llama.cpp` application should now be running inside a Docker container, and you can access it at `http://localhost:8000`.
+
+### Docker Compose (Optional)
+
+Alternatively, you can use Docker Compose to manage the build and run process.
+In `docker-compose.yml` replace /path/to/llama.cpp with the correct path to your llama.cpp directory on your local machine.
+To build and run the Docker container using Docker Compose, execute: ``docker-compose up`` or ``docker-compose up -d`` for running it in the background.
+This command builds and runs the Docker container as specified in the docker-compose.yml file. You can access the gpt-llama.cpp application at `http://localhost:8000`.
+
 ## Usage
 
 1. To set up the GPT-powered app, there are 2 ways:
