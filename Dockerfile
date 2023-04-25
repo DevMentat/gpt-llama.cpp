@@ -1,5 +1,5 @@
 # 1. Base image
-FROM node:18
+FROM node:20-slim
 
 # 2. Set environment variables
 ENV NODE_ENV=production
@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 443
 
 # 8. Start the application
-CMD ["npm", "start"]
+CMD ["npm", "start"] 
